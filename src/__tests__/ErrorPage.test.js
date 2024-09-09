@@ -1,16 +1,16 @@
-// src/__tests__/Actors.test.js
+// src/__tests__/ErrorPage.test.js
 
 import { render } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
-import Actors from '../components/Actors';
 import ErrorPage from '../components/ErrorPage';
 
 const routes = [
-  { path: "/actors", element: <Actors /> },
   { path: "*", element: <ErrorPage /> },
 ];
 
-test('renders the Actors component on route "/actors"', () => {
-  const router = createMemoryRouter(routes, { initialEntries: ['/actors'] });
+test('renders an error page when given a bad URL', () => {
+  const router = createMemoryRouter(routes, {
+    initialEntries: ['/bad-route']
+  });
   render(<RouterProvider router={router} />);
 });

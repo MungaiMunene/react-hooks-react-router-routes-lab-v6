@@ -1,12 +1,11 @@
-import { NavLink } from "react-router-dom";
-import "./NavBar.css";
+import { Link } from "react-router-dom";
 
-function NavBar() {
-  return (
-    <nav className="navbar">
-    
-    </nav>
-    );
-};
+const NavBar = () => (
+  <nav className="navbar">  {/* Added className="navbar" */}
+    <Link to="/">Home</Link>
+    <Link to="/actors">Actors</Link>
+    <Link to="/directors">Directors</Link>
+  </nav>
+);
 
 export default NavBar;
